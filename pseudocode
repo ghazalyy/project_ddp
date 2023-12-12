@@ -5,12 +5,38 @@ Inisialisasi struktur Book:
     - quantity: integer
     - next: Book pointer
 
+Inisialisasi kelas User
+    - Variabel private: 
+        string username
+        string password
+    - Variabel public:
+        User(string uname, string pwd) : username(uname), password(pwd)
+        Autenticate
+
 Inisialisasi kelas Library:
-    - Variabel private: head (pointer Book)
+    - Variabel private: 
+        head (pointer Book)
+        user (pointer User)
+
+        Inisialisasi struktur Transaction:
+        - bookID: integer
+        - borrowerName: string
+        - quantity: integer
+        - borrowDate: string
+        - returnDate: string
+        - next (pointer Transaction)
+
+        transactionsHead (pointer Transaction)
 
     Method Library():
         - head = NULL
+        - transactionsHead = NULL
+        - user = new User("admin", "password123")
         - Panggil loadBooksFromFile() untuk membaca data buku dari file saat memulai program
+
+    Method login():
+        - Memasukan username dan password
+        - Authenticate username dan password
 
     Method addBook(id, title, author, quantity):
         - Buat buku baru (newBook) dengan nilai-nilai yang diberikan
@@ -62,6 +88,9 @@ Main program:
             - Cari buku
             - Hapus buku
             - Edit informasi buku
+            - Pinjam buku
+            - Display buku dari kategori
+            - Bukti transaksi
             - Keluar dari program jika pilihan 0
 
     Kembali 0 untuk menunjukkan keluar dari program
