@@ -1,0 +1,67 @@
+Inisialisasi struktur Book:
+    - id: integer
+    - title: string
+    - author: string
+    - quantity: integer
+    - next: Book pointer
+
+Inisialisasi kelas Library:
+    - Variabel private: head (pointer Book)
+
+    Method Library():
+        - head = NULL
+        - Panggil loadBooksFromFile() untuk membaca data buku dari file saat memulai program
+
+    Method addBook(id, title, author, quantity):
+        - Buat buku baru (newBook) dengan nilai-nilai yang diberikan
+        - Set nilai-nilai buku baru sesuai input
+        - Tambahkan buku baru ke dalam linked list
+        - Tampilkan pesan bahwa buku berhasil ditambahkan
+
+    Method displayBooks():
+        - Jika head kosong, tampilkan pesan bahwa tidak ada buku
+        - Jika tidak kosong, tampilkan semua buku dalam linked list dengan informasi ID, judul, penulis, dan kuantitas
+
+    Method searchBook(id):
+        - Cari buku dengan ID yang diberikan
+        - Jika ditemukan, tampilkan informasi buku
+        - Jika tidak ditemukan, tampilkan pesan bahwa buku tidak ditemukan
+
+    Method deleteBook(id):
+        - Cari buku dengan ID yang diberikan
+        - Jika ditemukan, hapus buku dari linked list dan hapus memori yang dialokasikan
+        - Jika tidak ditemukan, tampilkan pesan bahwa buku tidak ditemukan
+
+    Method editBook(id):
+        - Cari buku dengan ID yang diberikan
+        - Jika ditemukan, izinkan pengguna untuk mengubah judul, penulis, dan kuantitas buku
+        - Jika tidak ditemukan, tampilkan pesan bahwa buku tidak ditemukan
+
+    Method saveBooksToFile():
+        - Buka file untuk penyimpanan data buku
+        - Tulis data buku ke dalam file
+
+    Method loadBooksFromFile():
+        - Buka file untuk memuat data buku
+        - Baca data buku dari file dan tambahkan buku ke dalam linked list
+
+    Method ~Library():
+        - Panggil saveBooksToFile() untuk menyimpan data buku ke dalam file sebelum program berakhir
+        - Bebaskan memori yang dialokasikan untuk setiap buku dalam linked list
+
+Main program:
+    - Buat objek Library
+    - Inisialisasi variabel choice
+
+    Lakukan loop:
+        - Tampilkan menu
+        - Terima pilihan dari pengguna
+        - Lakukan aksi sesuai pilihan yang dipilih:
+            - Tambah buku
+            - Tampilkan semua buku
+            - Cari buku
+            - Hapus buku
+            - Edit informasi buku
+            - Keluar dari program jika pilihan 0
+
+    Kembali 0 untuk menunjukkan keluar dari program
