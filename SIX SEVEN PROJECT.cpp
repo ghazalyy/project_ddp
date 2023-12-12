@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <cstring>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -276,6 +277,7 @@ public:
 int main() {
     Library library;
     library.login();
+    system("cls");
     int choice;
 
     do {
@@ -292,6 +294,7 @@ int main() {
 
         switch (choice) {
             case 1: {
+                system("cls");
                 int id, quantity;
                 char title[100], author[100];
                 cout << "Masukkan ID Buku: ";
@@ -307,9 +310,11 @@ int main() {
                 break;
             }
             case 2:
+                system("cls");
                 library.displayBooks();
                 break;
             case 3: {
+                system("cls");
                 int id;
                 cout << "Masukkan ID Buku yang dicari: ";
                 cin >> id;
@@ -317,6 +322,7 @@ int main() {
                 break;
             }
             case 4: {
+                system("cls");
                 int id;
                 cout << "Masukkan ID Buku yang akan dihapus: ";
                 cin >> id;
@@ -324,6 +330,7 @@ int main() {
                 break;
             }
             case 5: {
+                system("cls");
                 int id;
                 cout << "Masukkan ID Buku yang akan diubah: ";
                 cin >> id;
@@ -331,6 +338,7 @@ int main() {
                 break;
             }
             case 6: {
+                system("cls");
                 int id, quantity;
                 string borrowerName;
                 cout << "Masukkan ID Buku yang akan dipinjam: ";
@@ -344,6 +352,7 @@ int main() {
                 break;
             }
             case 7: {
+                system("cls");
                 library.printTransactionReceipt();
                 break;
             }
