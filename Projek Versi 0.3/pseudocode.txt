@@ -1,0 +1,115 @@
+Inisialisasi struktur Book:
+    - id: integer
+    - title: string
+    - author: string
+    - quantity: integer
+    - category : string;
+    - next: Book pointer
+
+Inisialisasi kelas User
+    - Variabel private: 
+        string username
+        string password
+    - Variabel public:
+        User(string uname, string pwd) : username(uname), password(pwd)
+        Autenticate
+
+Inisialisasi kelas Library:
+    - Variabel private: 
+        head (pointer Book)
+        user (pointer User)
+
+        Inisialisasi struktur Transaction:
+        - bookID: integer
+        - borrowerName: string
+        - quantity: integer
+        - borrowDate: string
+        - returnDate: string
+        - next (pointer Transaction)
+
+        transactionsHead (pointer Transaction)
+
+    Method Library():
+        - head = NULL
+        - transactionsHead = NULL
+        - user = new User("admin", "password123")
+        - Panggil loadBooksFromFile() untuk membaca data buku dari file saat memulai program
+
+    Method login():
+        - Memasukan username dan password
+        - Authenticate username dan password
+
+    Method addBook(id, title, author, quantity):
+        - Buat buku baru (newBook) dengan nilai-nilai yang diberikan
+        - Set nilai-nilai buku baru sesuai input
+        - Tambahkan buku baru ke dalam linked list
+        - Tampilkan pesan bahwa buku berhasil ditambahkan
+    
+    Method borrowBook(id, borrowerName, quantity)
+        - Cari buku dengan ID yang diberikan
+        - Periksa ketersediaan buku
+        - Pinjam buku serta kurangi stok buku yang dipinjam
+        - Mengambil tanggal saat ini dan masukkan ke currentTime
+        - Menghitung tanggal pengembalian dan masukan ke returnDate
+        - Buat objek baru dengan value (bookId, borrowerName, quantity, borrowDate, returnDate)
+        - Tambahkan objek baru ke dalam linked list
+        - Tampilkan pesan konfirmasi
+        
+    Method printTransactionRecepit()
+        - Cek jika ada transaksi dari kepala linked list
+        - Jika ada tampilkan id,peminjam,jumlah,tanggal peminjaman dan tanggal pengambilan
+
+    Method displayBooks():
+        - Jika head kosong, tampilkan pesan bahwa tidak ada buku
+        - Jika tidak kosong, tampilkan semua buku dalam linked list dengan informasi ID, judul, penulis, dan kuantitas
+
+    Method searchBook(id):
+        - Cari buku dengan ID yang diberikan
+        - Jika ditemukan, tampilkan informasi buku
+        - Jika tidak ditemukan, tampilkan pesan bahwa buku tidak ditemukan
+
+    Method deleteBook(id):
+        - Cari buku dengan ID yang diberikan
+        - Jika ditemukan, hapus buku dari linked list dan hapus memori yang dialokasikan
+        - Jika tidak ditemukan, tampilkan pesan bahwa buku tidak ditemukan
+
+    Method editBook(id):
+        - Cari buku dengan ID yang diberikan
+        - Jika ditemukan, izinkan pengguna untuk mengubah judul, penulis, dan kuantitas buku
+        - Jika tidak ditemukan, tampilkan pesan bahwa buku tidak ditemukan
+
+    Method saveBooksToFile():
+        - Buka file untuk penyimpanan data buku
+        - Tulis data buku ke dalam file
+
+    Method loadBooksFromFile():
+        - Buka file untuk memuat data buku
+        - Baca data buku dari file dan tambahkan buku ke dalam linked list
+
+    Method displayBooksByCategory(category)
+        - Jika head kosong, tampilkan bahwa tidak ada buku
+        - Jika tidak kosong, tampilkan buku sesuai kategorinya masing masing (nonfiction / fiction)
+
+    Method ~Library():
+        - Panggil saveBooksToFile() untuk menyimpan data buku ke dalam file sebelum program berakhir
+        - Bebaskan memori yang dialokasikan untuk setiap buku dalam linked list
+
+Main program:
+    - Buat objek Library
+    - Inisialisasi variabel choice
+
+    Lakukan loop:
+        - Tampilkan menu
+        - Terima pilihan dari pengguna
+        - Lakukan aksi sesuai pilihan yang dipilih:
+            - Tambah buku
+            - Tampilkan semua buku
+            - Cari buku
+            - Hapus buku
+            - Edit informasi buku
+            - Pinjam buku
+            - Display buku dari kategori
+            - Bukti transaksi
+            - Keluar dari program jika pilihan 0
+
+    Kembali 0 untuk menunjukkan keluar dari program
